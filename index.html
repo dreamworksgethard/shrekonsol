@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#24362e" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>$SHREK — Solana meme coin</title>
+    <meta
+      name="description"
+      content="$SHREK on Solana. Mint, chart, and how to buy — simple and straight to the swamp."
+    />
+    <meta property="og:title" content="$SHREK" />
+    <meta property="og:description" content="Solana meme coin. DYOR." />
+    <meta property="og:image" content="./Logo.png" />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./Logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="progress" aria-hidden="true">
+      <div class="progress__bar" id="scrollbar"></div>
+    </div>
+
+    <div class="fx" aria-hidden="true">
+      <div class="fx__photo"></div>
+      <div class="fx__veil"></div>
+      <canvas class="fx__stars" id="stars"></canvas>
+      <div class="fx__blob fx__blob--a"></div>
+      <div class="fx__blob fx__blob--b"></div>
+    </div>
+
+    <header class="topbar" id="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#home" aria-label="Shrek $SHREK — home">
+          <img class="brand__logo" src="./Logo.png" alt="" />
+          <span class="brand__text">
+            <span class="brand__name">Shrek</span>
+            <span class="brand__row">
+              <span class="brand__symbol">$SHREK</span>
+            </span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="#home">Home</a>
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#tokenomics">Tokenomics</a>
+          <a class="nav__link" href="#chart">Chart</a>
+          <a class="nav__link" href="#how">How to buy</a>
+          <a class="nav__link" href="#gallery">Gallery</a>
+          <a class="nav__link" href="#community">Community</a>
+        </nav>
+
+        <div class="topbar__cta">
+          <a class="btn btn--ghost btn--sm" id="header-x-link" href="#" target="_blank" rel="noopener noreferrer">X</a>
+          <a class="btn btn--primary btn--sm" id="header-tg-link" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile" id="mobile" aria-hidden="true">
+      <div class="mobile__panel">
+        <a class="mobile__link" href="#home">Home</a>
+        <a class="mobile__link" href="#about">About</a>
+        <a class="mobile__link" href="#tokenomics">Tokenomics</a>
+        <a class="mobile__link" href="#chart">Chart</a>
+        <a class="mobile__link" href="#how">How to buy</a>
+        <a class="mobile__link" href="#gallery">Gallery</a>
+        <a class="mobile__link" href="#community">Community</a>
+        <div class="mobile__row">
+          <a class="btn btn--ghost" id="mobile-x-link" href="#" target="_blank" rel="noopener noreferrer">X</a>
+          <a class="btn btn--primary" id="mobile-tg-link" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile__scrim" id="mobile-scrim" aria-hidden="true"></div>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="container hero__inner">
+          <div class="hero__copy" data-reveal>
+            <h1 class="hero__title">
+              <span class="hero__titleTop">Shrek</span>
+              <span class="hero__titleBottom">$SHREK</span>
+            </h1>
+            <p class="hero__subtitle">
+              A <strong>Solana</strong> meme coin. Clean, loud, and not serious. DYOR.
+            </p>
+
+            <div class="hero__cta-wrap">
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="#chart">
+                <span>Live chart</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a
+                class="btn btn--ghost btn--lg"
+                id="hero-buy-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buy on Pump.fun
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="ca">
+              <code class="ca__value" id="ca">PASTE_YOUR_SOLANA_MINT</code>
+              <button class="ca__copy" id="copy-ca-inline" type="button" data-copy-mint aria-label="Copy mint address">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+            </div>
+          </div>
+
+          <div class="hero__art" data-reveal aria-hidden="true">
+            <div class="mascot">
+              <div class="mascot__halo"></div>
+              <div class="mascot__orb">
+                <img class="mascot__logo" src="./Logo.png" alt="" />
+              </div>
+              <img class="mascot__shrek" src="./Shrek_(character).png" alt="" />
+              <img class="mascot__donkey" src="./Donkey_(Shrek).png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="about-dossier" data-reveal>
+            <h2 class="about-dossier__title">
+              <span class="about-dossier__titleThe">THE</span> ORIGIN
+            </h2>
+
+            <div class="about-dossier__grid">
+              <figure class="about-dossier__figure">
+                <img
+                  class="about-dossier__img"
+                  src="./assets/Shrek__character_-ce068eda-2210-41a7-b9ab-3f6d45bff5a9.png"
+                  alt="Shrek character"
+                  width="480"
+                  height="480"
+                  loading="lazy"
+                />
+              </figure>
+
+              <div class="about-dossier__copy">
+                <p class="about-dossier__lead">
+                  <strong>$SHREK</strong> is a Solana meme coin: jokes, culture, and charts — not a product pitch, not
+                  a roadmap, and not financial advice.
+                </p>
+                <div class="about-dossier__meme">
+                  <h3 class="about-dossier__memeTitle">About the meme coin</h3>
+                  <p>
+                    This is the on-chain version of swamp chaos: green candles, green ogre, zero corporate polish.
+                    The ticker rides the same dumb-fun energy as the memes — screenshots, reaction posts, and “we’re
+                    so back” cope when the chart wiggles.
+                  </p>
+                  <p>
+                    $SHREK is a fan / parody tribute. It is not affiliated with any studio or film. If you buy, you’re
+                    buying pixels and vibes — not a seat in the kingdom. Have fun, stay weird, and don’t bet the rent.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tokenomics">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <h2 class="section__title">Tokenomics</h2>
+            </div>
+          </div>
+
+          <div class="tok__panel" data-reveal>
+            <div class="tok__grid">
+              <div class="card tok__card">
+                <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v10l-8 4-8-4V7l8-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7l8 4 8-4M12 11v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Name</div>
+                <div class="tok__v" id="tok-name">Shrek $SHREK</div>
+              </div>
+            </div>
+
+            <div class="card tok__card">
+              <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Total supply</div>
+                <div class="tok__v" id="tok-supply">1.000.000.000</div>
+              </div>
+            </div>
+
+            <div class="card tok__card">
+              <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v6a8 8 0 0 1-16 0V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 20h6M12 18v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Tax (Buy / Sell)</div>
+                <div class="tok__v" id="tok-tax">0 / 0</div>
+              </div>
+            </div>
+
+            <div class="card tok__card">
+              <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3C9 8 8 11 8 15a4 4 0 0 0 8 0c0-4-1-7-4-12z"/>
+                </svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Liquidity</div>
+                <div class="tok__v" id="tok-lp">Burned</div>
+              </div>
+            </div>
+
+            <div class="card tok__card">
+              <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Network</div>
+                <div class="tok__v tok__v--network" id="tok-network">Solana</div>
+              </div>
+            </div>
+
+            <div class="card tok__card">
+              <div class="tok__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="tok__meta">
+                <div class="tok__k">Ownership</div>
+                <div class="tok__v" id="tok-own">Renounced</div>
+              </div>
+            </div>
+            </div>
+
+            <div class="tok__actions">
+              <button class="btn btn--ghost" type="button" data-copy-mint aria-label="Copy mint address">
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Copy mint</span>
+              </button>
+              <a class="btn btn--primary" href="#chart">
+                <span>Live chart</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="chart">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <h2 class="section__title">Chart</h2>
+            </div>
+          </div>
+
+          <div class="embed" data-reveal>
+            <iframe
+              id="chart-embed"
+              title="$SHREK chart"
+              loading="lazy"
+              src="about:blank"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <h2 class="section__title">How to buy</h2>
+            </div>
+          </div>
+
+          <div class="steps" data-reveal>
+            <article class="card step">
+              <div class="step__num">01</div>
+              <div class="step__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M16 15h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="step__title">Get a wallet</h3>
+              <p class="step__text">Phantom, Solflare, Backpack — pick your ride. Turn on Solana mainnet.</p>
+            </article>
+
+            <article class="card step">
+              <div class="step__num">02</div>
+              <div class="step__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="step__title">Fund it</h3>
+              <p class="step__text">Drop in some SOL for fees and whatever you want to ape.</p>
+            </article>
+
+            <article class="card step">
+              <div class="step__num">03</div>
+              <div class="step__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l-3-3M17 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="step__title">Buy</h3>
+              <p class="step__text">Open the Pump.fun link, connect your wallet, and buy with SOL.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="gallery">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <h2 class="section__title">Gallery</h2>
+            </div>
+          </div>
+
+          <div class="gallery" data-reveal>
+            <button class="gcard" type="button" data-lightbox="./assets/Shrek__character_-ce068eda-2210-41a7-b9ab-3f6d45bff5a9.png" data-caption="Shrek">
+              <img src="./assets/Shrek__character_-ce068eda-2210-41a7-b9ab-3f6d45bff5a9.png" alt="Shrek character" loading="lazy" />
+            </button>
+            <button class="gcard" type="button" data-lightbox="./assets/Donkey__Shrek_-78cfcd53-8891-4ccc-9f34-ef2636b3f2f6.png" data-caption="Donkey">
+              <img src="./assets/Donkey__Shrek_-78cfcd53-8891-4ccc-9f34-ef2636b3f2f6.png" alt="Donkey from Shrek" loading="lazy" />
+            </button>
+            <button class="gcard" type="button" data-lightbox="./assets/shrek-gallery-1-e547b6fe-6961-4267-81b1-730738ba39f1.png" data-caption="Shrek &amp; Fiona">
+              <img src="./assets/shrek-gallery-1-e547b6fe-6961-4267-81b1-730738ba39f1.png" alt="Shrek and Fiona" loading="lazy" />
+            </button>
+            <button class="gcard" type="button" data-lightbox="./assets/AAAAQSxer8DRX301eMBPo4ZHKkzyNRU6NxNXRH0EL4IOdcX_s7v7p7j9ssCKL14EGjl7-_LhaRnjppTaZmoOhLqgcgdbla5JpW2UaznJ7Ta8yX6BfsTNbiXf8QrfvOfqaKQ1VhsVCSnVYoZCAPS3IjwxU23wHMw-258927a8-6967-4e12-9d7f-09cd43f09737.png" data-caption="Ogre mode">
+              <img src="./assets/AAAAQSxer8DRX301eMBPo4ZHKkzyNRU6NxNXRH0EL4IOdcX_s7v7p7j9ssCKL14EGjl7-_LhaRnjppTaZmoOhLqgcgdbla5JpW2UaznJ7Ta8yX6BfsTNbiXf8QrfvOfqaKQ1VhsVCSnVYoZCAPS3IjwxU23wHMw-258927a8-6967-4e12-9d7f-09cd43f09737.png" alt="Shrek meme still" loading="lazy" />
+            </button>
+            <button class="gcard" type="button" data-lightbox="./assets/18shrek-1-mediumSquareAt3X-38527694-f5f8-4522-b766-d47e21d36145.png" data-caption="Classic Shrek">
+              <img src="./assets/18shrek-1-mediumSquareAt3X-38527694-f5f8-4522-b766-d47e21d36145.png" alt="Classic Shrek closeup" loading="lazy" />
+            </button>
+            <button class="gcard" type="button" data-lightbox="./assets/shrek-gifgod-afa1d7ea-44a5-4c96-9ad5-b2b712f716a7.png" data-caption="Swamp vibes">
+              <img src="./assets/shrek-gifgod-afa1d7ea-44a5-4c96-9ad5-b2b712f716a7.png" alt="Shrek gif still" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="community">
+        <div class="container">
+          <div class="community card" data-reveal>
+            <div class="community__copy">
+              <p class="community__eyebrow">Social</p>
+              <h2 class="community__title">Community</h2>
+              <p class="community__text">
+                Updates and chat on X and Telegram. Not financial advice.
+              </p>
+            </div>
+            <div class="community__actions">
+              <a class="btn btn--ghost btn--lg" id="community-x-link" href="#" target="_blank" rel="noopener noreferrer">
+                Join on X
+              </a>
+              <a class="btn btn--primary btn--lg" id="community-tg-link" href="#" target="_blank" rel="noopener noreferrer">
+                Join Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+      <div class="toast__inner" id="toast-text">Copied</div>
+    </div>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox__backdrop" id="lightbox-close" type="button" aria-label="Close image"></button>
+      <figure class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview">
+        <img class="lightbox__img" id="lightbox-img" alt="" />
+        <figcaption class="lightbox__cap" id="lightbox-cap"></figcaption>
+        <button class="lightbox__x" id="lightbox-x" type="button" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </figure>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
