@@ -16,8 +16,8 @@ const CONFIG = {
     /** DexScreener pair or token URL — replace with your pair when live. */
     chart: "https://dexscreener.com/solana/6Jtiy6qHWRr41YoyDQUtZhtNahv99Xd1qrC3Re7Epump",
     explorer: "https://solscan.io/",
-    x: "https://x.com/",
-    tg: "https://t.me/",
+    x: "https://x.com/ShrekOfSol",
+    tg: "https://t.me/shreksol",
   },
 };
 
