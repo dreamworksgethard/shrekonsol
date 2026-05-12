@@ -3,7 +3,7 @@ const CONFIG = {
   symbol: "$SHREK",
   chain: "SOL",
   /** Paste your Solana mint here (base58). */
-  contractAddress: "PASTE_YOUR_SOLANA_MINT_HERE",
+  contractAddress: "6Jtiy6qHWRr41YoyDQUtZhtNahv99Xd1qrC3Re7Epump",
   supply: "1.000.000.000",
   buyTax: "0%",
   sellTax: "0%",
@@ -12,9 +12,9 @@ const CONFIG = {
   network: "Solana",
   links: {
     /** Pump.fun — set to your coin page when live, e.g. https://pump.fun/coin/<mint> */
-    dex: "https://pump.fun",
+    dex: "https://pump.fun/coin/6Jtiy6qHWRr41YoyDQUtZhtNahv99Xd1qrC3Re7Epump",
     /** DexScreener pair or token URL — replace with your pair when live. */
-    chart: "https://dexscreener.com/solana",
+    chart: "https://dexscreener.com/solana/6Jtiy6qHWRr41YoyDQUtZhtNahv99Xd1qrC3Re7Epump",
     explorer: "https://solscan.io/",
     x: "https://x.com/",
     tg: "https://t.me/",
