@@ -15,8 +15,6 @@ const CONFIG = {
     dex: "https://pump.fun",
     /** DexScreener pair or token URL — replace with your pair when live. */
     chart: "https://dexscreener.com/solana",
-    chartEmbed:
-      "https://dexscreener.com/solana?embed=1&theme=dark&trades=0&info=0",
     explorer: "https://solscan.io/",
     x: "https://x.com/",
     tg: "https://t.me/",
@@ -353,16 +351,11 @@ function renderConfig() {
   setHref("mobile-x-link", CONFIG.links.x);
   setHref("mobile-tg-link", CONFIG.links.tg);
   setHref("hero-buy-link", CONFIG.links.dex);
-
+  setHref("hero-chart-link", CONFIG.links.chart);
+  setHref("tok-chart-link", CONFIG.links.chart);
 
   setHref("community-x-link", CONFIG.links.x);
   setHref("community-tg-link", CONFIG.links.tg);
-
-  const chartIframe = document.getElementById("chart-embed");
-  const embedSrc = CONFIG.links.chartEmbed || CONFIG.links.chart;
-  if (chartIframe instanceof HTMLIFrameElement && embedSrc) {
-    chartIframe.src = embedSrc;
-  }
 }
 
 renderConfig();

@@ -57,7 +57,6 @@
           <a class="nav__link" href="#home">Home</a>
           <a class="nav__link" href="#about">About</a>
           <a class="nav__link" href="#tokenomics">Tokenomics</a>
-          <a class="nav__link" href="#chart">Chart</a>
           <a class="nav__link" href="#how">How to buy</a>
           <a class="nav__link" href="#gallery">Gallery</a>
           <a class="nav__link" href="#community">Community</a>
@@ -79,7 +78,6 @@
         <a class="mobile__link" href="#home">Home</a>
         <a class="mobile__link" href="#about">About</a>
         <a class="mobile__link" href="#tokenomics">Tokenomics</a>
-        <a class="mobile__link" href="#chart">Chart</a>
         <a class="mobile__link" href="#how">How to buy</a>
         <a class="mobile__link" href="#gallery">Gallery</a>
         <a class="mobile__link" href="#community">Community</a>
@@ -105,7 +103,13 @@
 
             <div class="hero__cta-wrap">
             <div class="hero__actions">
-              <a class="btn btn--primary btn--lg" href="#chart">
+              <a
+                class="btn btn--primary btn--lg"
+                id="hero-chart-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>Live chart</span>
                 <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -274,33 +278,19 @@
                 </svg>
                 <span>Copy mint</span>
               </button>
-              <a class="btn btn--primary" href="#chart">
+              <a
+                class="btn btn--primary"
+                id="tok-chart-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>Live chart</span>
                 <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--alt" id="chart">
-        <div class="container">
-          <div class="section__head" data-reveal>
-            <div>
-              <h2 class="section__title">Chart</h2>
-            </div>
-          </div>
-
-          <div class="embed" data-reveal>
-            <iframe
-              id="chart-embed"
-              title="$SHREK chart"
-              loading="lazy"
-              src="about:blank"
-              allowfullscreen
-            ></iframe>
           </div>
         </div>
       </section>
